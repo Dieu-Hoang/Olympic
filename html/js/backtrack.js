@@ -23,12 +23,14 @@ const show = (a, n, parent) => {
 }
 
 const toHop = (index, start, a, n, arr) => {
+    console.log(arr);
+    
 	if (index >= n) {
 		show(a, n, toHopRes);
 		return;
 	}
 
-	for (let i = start; i < n; i++) {
+	for (let i = start; i < arr.length; i++) {
 		a[index] = arr[i];
 		toHop(index + 1, i, a, n, arr);
 	}
@@ -40,7 +42,7 @@ const chinhHop = (index, a, n, arr) => {
 		return;
 	}
 
-	for (let i = 0; i < n; i++) {
+	for (let i = 0; i < arr.length; i++) {
 		a[index] = arr[i];
 		chinhHop(index + 1, a, n, arr);
 	}
@@ -50,11 +52,17 @@ const chinhHop = (index, a, n, arr) => {
 const calc = () => {
    
     const arr = names.value.split(" ")
+    console.log(arr);
+    
     const n = parseInt(num.value) 
     let a = []
     for (let i = 0; i < arr.length; i++) {
         a.push(0)
     }
+
+    chinhHopRes.innerHTML = ""
+    toHopRes.innerHTML = ""
+
     toHop(0, 0, a, n, arr)
     chinhHop(0, a, n, arr)
 }
