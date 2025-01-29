@@ -1,1 +1,1 @@
-[Page](http://Dieu-Hoang.github.io/Olympic)
+[MyPage](http://Dieu-Hoang.github.io/Olympic)
